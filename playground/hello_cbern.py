@@ -1,8 +1,13 @@
-import streamlit as st
+from flask import Flask
 
-def main():
-    st.title("Welcome to the cbern python library!")
-    st.write("This library is meant for document embeddings")
+# Create a Flask application
+app = Flask(__name__)
 
-if __name__ == "__main__":
-    main()
+# Define a route for the root URL
+@app.route('/')
+def cbern_welcome_page():
+    return "<h1> Welcome to cbern!</h1> <p> This is a great search ecosystem!</p>"
+
+# Run the Flask application if the script is executed
+if __name__ == '__main__':
+    app.run(debug=True)
